@@ -214,7 +214,7 @@ function handleTabKey(event, textarea) {
     const url = URL.createObjectURL(blob); // Tworzenie URL z Blob
     const link = document.createElement('a'); // Tworzenie elementu <a> do zapisu
     link.href = url;
-    link.download = 'Mypage.html'; // Nazwa pliku do pobrania
+    link.download = 'index.html'; // Nazwa pliku do pobrania
     document.body.appendChild(link); // Dodanie linku do ciała dokumentu
     link.click(); // Emulacja kliknięcia linku
     document.body.removeChild(link); // Usunięcie linku
@@ -233,7 +233,7 @@ async function searchImages() {
     imageResult.innerHTML = "";
 
     if (!searchInput) {
-        alert("Wprowadź tytuł obrazu do wyszukania.");
+        alert("Enter a description of the image to search.");
         return;
     }
 
@@ -241,7 +241,7 @@ async function searchImages() {
     const data = await response.json();
 
     if (data.results.length === 0) {
-        imageResult.textContent = "Brak wyników wyszukiwania.";
+        imageResult.textContent = "No search results.";
         return;
     }
 
@@ -250,12 +250,6 @@ async function searchImages() {
         image.src = result.urls.small;
         imageResult.appendChild(image);
 
-        const description = document.createElement("p");
-        description.textContent = `Opis: ${result.description || "Brak opisu"}`;
-        imageResult.appendChild(description);
 
-        const author = document.createElement("p");
-        author.textContent = `Autor: ${result.user.name}`;
-        imageResult.appendChild(author);
     });
 }

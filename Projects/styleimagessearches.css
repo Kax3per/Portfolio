@@ -14,10 +14,13 @@
 img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 10px; /* Odstęp między obrazami */
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Cień dla obrazów */
+    margin-bottom: 10px; 
+    border-radius: 20px;
+
+   
 }
+
+
 
 
 input[type="text"] {
@@ -31,9 +34,9 @@ input[type="text"]::placeholder {
     color: #999; /* Kolor zastępczego tekstu w polu wyszukiwania */
 }
 #imageResult {
-    text-align: center; /* Tekst w lewo dla opisów */
-    padding: 5px;
 
+    padding: 5px;
+   
 }
 
 
