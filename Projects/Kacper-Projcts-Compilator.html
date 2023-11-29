@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.PNG" type="image/x-icon">
+    <title>Kacper Siwoń - Code Editor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="stylecompilator.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+        <a href="../index.html" class="logo" data-lang="en">KACPER</a>
+
+      
+
+        <div class="bx bx-moon" id="darkMode-icon"></div>
+
+        
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1 >Code Editor</h1>
+ 
+           
+            <div class="social-media">
+                <a href="https://www.facebook.com/kacper.siwon" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://instagram.com/_kac3per_?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://www.linkedin.com/in/kacper-siwo%C5%84/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            </div>
+         
+            
+         
+            <br><br>
+            
+        </div>
+        
+        <div class="profession-container" >
+
+
+            <div class="overlay"></div>
+        </div>
+
+  
+    </section>
+
+    
+  <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/about.png" alt="">
+        </div>
+
+       <div class="about-content">
+            <h2 class="heading" data-lang="en">About <span>Code Editor</span></h2>
+            <p>
+                How it works:
+                User Interface: The application has an interface with three areas for entering code (for HTML, CSS, and JavaScript) and an area where the result is displayed.
+
+                Code Editor: Users input code in the editor area for respective languages. Changes made in the editor are immediately reflected in the output area.
+
+                Displaying Output: The output area uses an < iframe > to dynamically show the webpage based on the code entered in the editor.
+            </p>
+            <p data-lang="en">
+                Technologies used in a nutshell:
+                HTML, CSS, JavaScript: These are web programming languages used for content creation, styling, and website interactivity.
+
+                JavaScript (Vanilla JS): JavaScript scripts handle user interactions, manipulate the Document Object Model (DOM), and update displayed data based on entered code.
+
+                CSS: Styles elements and adds visual effects to the page.
+
+                HTML < iframe >: Used to display a webpage within another webpage.
+
+                Google Fonts: Utilizes custom fonts from Google Fonts resources.
+
+                Ionicons: Icon library providing icons used in the interface.
+
+                Blob: Generates an HTML file based on entered code and allows it to be downloaded as a file.
+
+                Event Listeners: Used to listen for user actions like entering code or clicking within the editor area.
+
+                This tool provides a simple interface to input and showcase code in real-time, which is useful for creating, testing, and experimenting with web code.
+            </p>
+            
+        </div>
+    </section> 
+
+   <br><br><br><br><br>
+    <h2 class="heading" data-lang="en">Code <span>Editor</span></h2>
+    <br><br><br><br>
+    <main class="editor">
+        <div class="code-editor" onclick="">
+          <div class="code-section">
+         
+            <textarea id="htmlCode" placeholder=" HTML code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
+          </div>
+          <div class="code-section">
+            
+            <textarea id="cssCode" placeholder=" CSS code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
+          </div>
+          <div class="code-section">
+          
+            <textarea id="javascriptCode" placeholder=" JavaScript code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
+            <center>
+                <ion-icon onclick="saveHTMLFile()" class="save" style="font-size: 30px; " name="cloud-done-outline"></ion-icon>
+              </center>
+          </div>
+        </div>
+     
+        <div class="result">
+  
+          <iframe id="viewer"></iframe>
+          
+    
+    
+        </div>
+      </main>
+
+
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+ 
+</body>
+
+</html>
