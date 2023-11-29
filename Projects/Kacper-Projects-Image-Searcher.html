@@ -30,7 +30,7 @@
 
     <section class="home" id="home">
         <div class="home-content">
-            <h1 style="font-size: 70px;">Code Editor</h1>
+            <h1 style="font-size: 70px;">Images Searcher</h1>
  
            
             <div class="social-media">
@@ -61,7 +61,7 @@
         </div>
 
        <div class="about-content">
-            <h2 class="heading" data-lang="en">About <span>Code Editor</span></h2>
+            <h2 class="heading" data-lang="en">About <span>Images Searcher</span></h2>
             <p>
                 How it works:
                 User Interface: The application has an interface with three areas for entering code (for HTML, CSS, and JavaScript) and an area where the result is displayed.
@@ -95,39 +95,80 @@
     </section> 
 
    <br><br><br><br><br>
-    <h2 class="heading" data-lang="en">Code <span>Editor</span></h2>
-    <br><br><br><br>
-    <main class="editor">
-        <div class="code-editor" onclick="">
-          <div class="code-section">
-         
-            <textarea id="htmlCode" placeholder=" HTML code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
-          </div>
-          <div class="code-section">
-            
-            <textarea id="cssCode" placeholder=" CSS code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
-          </div>
-          <div class="code-section">
-          
-            <textarea id="javascriptCode" placeholder=" JavaScript code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
-            <center>
-                
-                <button class="btn" onclick="saveHTMLFile()">DOWNLOAD CODE</button>
-              </center>
-          </div>
-        </div>
-     
-        <div class="result">
-  
-          <iframe id="viewer"></iframe>
-          
-    
-    
-        </div>
-      </main>
+    <h2 class="heading" data-lang="en">Images <span>Searcher</span></h2>
+<style>
+
+    #imageSearch {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Cień */
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px; /* Odstęp między obrazami */
+        border-radius: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Cień dla obrazów */
+    }
 
 
 
+    input[type="text"] {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 60%;
+        max-width: 300px;
+    }
+
+    #imageResult {
+        text-align: center; /* Tekst w lewo dla opisów */
+        padding: 20px;
+
+    }
+    p {
+        margin: 5px 0;
+    }
+</style>
+</head>
+<body>
+
+
+    <br><br><br><br><br><br>
+<div id="imageSearch">
+    <h1 style="text-align: center;">Search for images<br>
+        (Describe the image in English, e.g. Ocean or Sky)</h1>
+        <center>
+    <input type="text" id="searchInput" placeholder="Sky">
+    <ion-icon name="search-sharp" onclick="searchImages()" style="font-size: 24px; cursor: pointer;"></ion-icon>
+</center>
+    <div id="imageResult"></div>
+</div>
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+
+
+
+
+
+<footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy; 2023 | All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-iconTop">
+        <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+    </div>
+</footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -135,6 +176,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
  
+
 </body>
 
 </html>
