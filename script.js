@@ -220,3 +220,42 @@ function handleTabKey(event, textarea) {
     document.body.removeChild(link); // Usunięcie linku
   }
 
+
+
+
+                //IMAGES SEARCGER 
+
+const apiKey = 'c-aUlGUqNBtmwXhX3heJQ42hOR-8mHNH9PNYZHrfcCE';
+
+async function searchImages() {
+    const searchInput = document.getElementById("searchInput").value;
+    const imageResult = document.getElementById("imageResult");
+    imageResult.innerHTML = "";
+
+    if (!searchInput) {
+        alert("Wprowadź tytuł obrazu do wyszukania.");
+        return;
+    }
+
+    const response = await fetch(`https://api.unsplash.com/search/photos?query=${searchInput}&client_id=${apiKey}`);
+    const data = await response.json();
+
+    if (data.results.length === 0) {
+        imageResult.textContent = "Brak wyników wyszukiwania.";
+        return;
+    }
+
+    data.results.forEach(result => {
+        const image = document.createElement("img");
+        image.src = result.urls.small;
+        imageResult.appendChild(image);
+
+        const description = document.createElement("p");
+        description.textContent = `Opis: ${result.description || "Brak opisu"}`;
+        imageResult.appendChild(description);
+
+        const author = document.createElement("p");
+        author.textContent = `Autor: ${result.user.name}`;
+        imageResult.appendChild(author);
+    });
+}
