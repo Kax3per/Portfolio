@@ -9,7 +9,7 @@
     <title>Kacper Siwoń - Code Editor</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="stylecompilator.css">
+    <link rel="stylesheet" href="styleimagessearches.css">
 </head>
 
 <body>
@@ -109,9 +109,10 @@
         padding: 20px;
         border: 1px solid #ccc;
         width: 80%;
+        background-color: transparent;
         max-width: 600px;
         margin: 0 auto;
-
+        text-align: center;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Cień */
     }
@@ -153,10 +154,10 @@
 <div id="imageSearch">
     <h1 style="text-align: center;">Search for images<br>
         (Describe the image in English, e.g. Ocean or Sky)</h1>
-        <center>
+      
     <input type="text" id="searchInput" placeholder="Sky">
     <ion-icon name="search-sharp" onclick="searchImages()" style="font-size: 24px; cursor: pointer;"></ion-icon>
-</center>
+
     <div id="imageResult"></div>
 </div>
     </section>
