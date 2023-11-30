@@ -504,8 +504,8 @@ span {
 }
 
 .testimonial-slide img {
-
-
+    height: 125px;
+    width: 125px;
     border: .5rem solid var(--bg-color);
     outline: .5rem solid var(--main-color);
 }

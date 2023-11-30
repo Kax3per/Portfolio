@@ -18,7 +18,12 @@
     <header class="header">
         <a href="../index.html" class="logo" data-lang="en">KACPER</a>
 
-      
+        <nav class="navbar">
+            <a href="#home" class="active" data-lang="en">Home</a>
+            <a href="#about"data-lang="en">About</a>
+            <a href="#portfolio"data-lang="en">Image Searcher</a>
+ 
+        </nav>
 
         <div class="bx bx-moon" id="darkMode-icon"></div>
 
@@ -62,40 +67,41 @@
 
        <div class="about-content">
             <h2 class="heading" data-lang="en">About <span>Images Searcher</span></h2>
-            <p>
-                How it works:
-                User Interface: The application has an interface with three areas for entering code (for HTML, CSS, and JavaScript) and an area where the result is displayed.
-
-                Code Editor: Users input code in the editor area for respective languages. Changes made in the editor are immediately reflected in the output area.
-
-                Displaying Output: The output area uses an < iframe > to dynamically show the webpage based on the code entered in the editor.
+            
+               
+            <p>How It Works:
+                This code orchestrates a simple image search interface. Users input image descriptions, triggering a JavaScript function upon clicking the search icon. The searchImages() function, when activated, fetches data from the Unsplash API based on the entered description. Upon receiving the API response, it dynamically generates HTML elements for image thumbnails.
             </p>
-            <p data-lang="en">
-                Technologies used in a nutshell:
-                HTML, CSS, JavaScript: These are web programming languages used for content creation, styling, and website interactivity.
+                <p>
+                HTML:
+                Page Structure: Defines the webpage elements such as headers, text fields, buttons, and result containers.
+                Content Tags: Used to place visual elements like headers < h1 >, < h2 >, input fields < input >, buttons, and the search result area.
+                Link Tags: Utilized for importing icons through < link > in the < head > section and loading scripts <' script '> for external libraries
+            </p>
 
-                JavaScript (Vanilla JS): JavaScript scripts handle user interactions, manipulate the Document Object Model (DOM), and update displayed data based on entered code.
+                <p>CSS:
+                Styling Elements: Defines the webpage's appearance, including color schemes, fonts, margins, borders, background, etc.
+                Element-Specific Settings: Specifies how individual elements should be displayed, such as header styles < h1 >, spacing between elements, background colors, etc.</p>
 
-                CSS: Styles elements and adds visual effects to the page.
+                
+                <p>JavaScript:
+                User Interaction Handling: Reacts to user interactions, like triggering the searchImages() function after clicking a button.
+                API Communication: Utilizes Fetch API to send requests to the Unsplash service to fetch image data based on the entered description.
+                DOM Manipulation: Dynamically creates HTML elements based on data received from the API and places them on the webpage.
+                Error Handling & Alerts: Displays an alert message in case of errors, like an empty input field requiring a description.
+            </p>
+            <p>Fetch API:
+                API Connectivity: Allows sending requests to the Unsplash service, fetching image data based on the entered description.
+                Asynchronous Data Retrieval: Functions asynchronously, allowing data retrieval without blocking user interactions, ensuring smooth application performance. </p>
+               
 
-                HTML < iframe >: Used to display a webpage within another webpage.
-
-                Google Fonts: Utilizes custom fonts from Google Fonts resources.
-
-                Ionicons: Icon library providing icons used in the interface.
-
-                Blob: Generates an HTML file based on entered code and allows it to be downloaded as a file.
-
-                Event Listeners: Used to listen for user actions like entering code or clicking within the editor area.
-
-                This tool provides a simple interface to input and showcase code in real-time, which is useful for creating, testing, and experimenting with web code.
             </p>
             
         </div>
     </section> 
 
-   <br><br><br><br><br>
-    <h2 class="heading" data-lang="en">Images <span>Searcher</span></h2>
+
+ 
 <style>
 
     #imageSearch {
@@ -140,7 +146,10 @@
 <body>
 
 
-    <br><br><br><br><br><br>
+ 
+    <section id="portfolio">
+        <h2 class="heading" data-lang="en">Images <span>Searcher</span></h2>
+        <br><br><br><br><br>
 <div id="imageSearch">
     <h1 style="text-align: center;">Search for images<br>
         (Describe the image in English, e.g. Ocean or Sky)</h1>
@@ -150,14 +159,7 @@
 </center>
     <div id="imageResult"></div>
 </div>
-
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-
-
-
-
+    </section>
 
 
 <footer class="footer">
