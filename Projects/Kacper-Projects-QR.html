@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.PNG" type="image/x-icon">
+  <title>Kacper Siwoń - QR Generator</title>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="styleToDoList.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+        <a href="../index.html#portfolio" class="logo" data-lang="en">KACPER</a>
+
+        <nav class="navbar">
+       
+          <a href="#home" class="active" data-lang="en">Home</a>
+          <a href="#about"data-lang="en">About</a>
+          <a href="#portfolio"data-lang="en">QR Generator</a>
+  
+      </nav>
+      
+
+        <div class="bx bx-moon" id="darkMode-icon"></div>
+    
+        
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+   
+     
+
+    <section class="home" id="home">
+        <div class="home-content">
+          <center>
+          <h2 style="font-size: 70px;" class="heading">QR Generator</h2>
+       
+            <div class="social-media">
+                <a href="https://www.facebook.com/kacper.siwon" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://instagram.com/_kac3per_?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://www.linkedin.com/in/kacper-siwo%C5%84/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            </div>
+          </center>
+            
+         
+            <br><br>
+            
+        </div>
+        
+        <div class="profession-container" >
+
+
+          <div class="overlay"></div>
+      </div>
+        
+
+
+  
+    </section>
+
+    
+  <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/about.png" alt="">
+        </div>
+
+       <div class="about-content">
+            <h2 class="heading" data-lang="en">About <span>QR Generator</span></h2>
+            <p>
+                How it works:
+                The application features a text field where users can input new tasks. When a user enters a new task and hits the Enter key, it gets added to the list. Tasks can be marked as completed or unchecked by clicking on them. Each task has a trash icon for deletion upon clicking. The count of pending tasks to be completed is displayed for user reference.
+            </p>
+            <p data-lang="en">
+                Technologies used in a nutshell:
+                HTML, CSS, JavaScript: These are web programming languages used for content creation, styling, and website interactivity.
+
+               
+
+                HTML:
+
+                Structure: Elements such as text fields < textarea >, lists < ul >, buttons < button >, and other UI components are structurally defined using HTML tags.
+                CSS:
+                
+                Styling: Within the  style  section, CSS styles define the appearance and layout of elements on the page. Styling includes aspects like background color background-color, margins margin, fonts font-family, font-size, and scrollbar appearance scrollbar.
+                JavaScript:
+                
+                User Interactions: The JavaScript code within the  script > section handles user interactions with the application. It manages adding new tasks (addEventListener), marking tasks as completed or undoing that action (onclick, classList.toggle), deleting tasks (remove), and updating displayed data on the page.
+                These technologies are used across different facets of the webpage, ensuring comprehensive functionality for managing a task list.
+                
+                
+                
+                
+                
+                
+                
+            </p>
+            
+        </div>
+    </section> 
+
+<center>
+   <section id="portfolio">
+    <h2 class="heading" data-lang="en" >QR <span>Generator</span></h2>
+    <br><br><br><br>
+    <div class="wrapper">
+
+        <div class="form">
+          <input type="text" spellcheck="false" placeholder="Url | Text ">
+          <button>Generate</button>
+        </div>
+        <div class="qr-code">
+          <img src="" alt="qr-code">
+        </div>
+      </div>
+
+  </section>
+</center>
+  <br><br><br><br><br>   
+  <footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy; 2023 | All Rights Reserved.</p>
+
+      
+    </div>
+
+    <div class="footer-iconTop">
+        <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+    </div>
+</footer>
+
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="../script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    const wrapper = document.querySelector(".wrapper"),
+  qrInput = wrapper.querySelector(".form input"),
+  generateBtn = wrapper.querySelector(".form button"),
+  qrImg = wrapper.querySelector(".qr-code img");
+let preValue;
+
+generateBtn.addEventListener("click", () => {
+  let qrValue = qrInput.value.trim();
+  if (!qrValue || preValue === qrValue) return;
+  preValue = qrValue;
+  generateBtn.innerText = "Generating QR Code...";
+  qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+  qrImg.addEventListener("load", () => {
+    wrapper.classList.add("active");
+    generateBtn.innerText = "Generate QR Code";
+  });
+});
+
+qrInput.addEventListener("keyup", () => {
+  if (!qrInput.value.trim()) {
+    wrapper.classList.remove("active");
+    preValue = "";
+  }
+});
+</script>
+
+</body>
+
+</html>
+
+<style>
+
+.wrapper {
+border-radius: 20px;
+justify-content: center; 
+align-items: center;
+height: 265px;
+max-width: 410px;
+background: transparent;
+padding: 20px 25px 0;
+transition: height 0.2s ease;
+box-shadow: 0 8px 25px #50409A;
+}
+
+.wrapper.active {
+  height: 400px;
+}
+
+
+header p {
+  margin-top: 5px;
+  color: #aaa;
+  font-size: 16px;
+}
+
+
+
+.form :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.1s ease;
+}
+
+.form input {
+  font-size: 18px;
+  padding: 0 17px;
+  border: 1px solid black;
+
+
+}
+
+
+
+
+
+.form button {
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+
+  
+}
+
+
+.qr-code {
+  opacity: 0;
+  display: flex;
+  padding: 33px ;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+}
+
+.wrapper.active .qr-code {
+  opacity: 3;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+
+.qr-code img {
+  width: 170px;
+}
+
+@media (max-width: 430px) {
+  .wrapper {
+    height: 255px;
+    padding: 16px 20px;
+  }
+  .wrapper.active {
+    height: 510px;
+  }
+  header p {
+    color: #696969;
+  }
+  .form :where(input, button) {
+    height: 52px;
+  }
+  .qr-code img {
+    width: 160px;
+  }
+}
+</style>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -225,7 +225,7 @@ function handleTabKey(event, textarea) {
 
                 //IMAGES SEARCGER 
 
-const apiKey = 'c-aUlGUqNBtmwXhX3heJQ42hOR-8mHNH9PNYZHrfcCE';
+const apiKey1 = 'c-aUlGUqNBtmwXhX3heJQ42hOR-8mHNH9PNYZHrfcCE';
 
 async function searchImages() {
     const searchInput = document.getElementById("searchInput").value;
@@ -237,7 +237,7 @@ async function searchImages() {
         return;
     }
 
-    const response = await fetch(`https://api.unsplash.com/search/photos?query=${searchInput}&client_id=${apiKey}`);
+    const response = await fetch(`https://api.unsplash.com/search/photos?query=${searchInput}&client_id=${apiKey1}`);
     const data = await response.json();
 
     if (data.results.length === 0) {
@@ -253,3 +253,10 @@ async function searchImages() {
 
     });
 }
+
+
+
+
+//WEATHER APP
+
+ 
