@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,27 +77,25 @@
        <div class="about-content">
             <h2 class="heading" data-lang="en">About <span>QR Code</span></h2>
             <p>
-                How it works:
-                The application features a text field where users can input new tasks. When a user enters a new task and hits the Enter key, it gets added to the list. Tasks can be marked as completed or unchecked by clicking on them. Each task has a trash icon for deletion upon clicking. The count of pending tasks to be completed is displayed for user reference.
+                <b>How it works:</b>
+                This HTML and JavaScript code generates a QR code based on the entered text or URL. Once the user inputs data and clicks the 'Generate' button, the script creates a QR code with dimensions of 200x200 pixels using the qrserver.com API. After generating the QR code image, it gets displayed on the webpage. Additionally, when the text field is empty, the QR code display is hidden, making the application responsive and intuitive by showing the code only when generated.
             </p>
             <p data-lang="en">
-                Technologies used in a nutshell:
+                <b>Technologies used in a nutshell:</b>
                 HTML, CSS, JavaScript: These are web programming languages used for content creation, styling, and website interactivity.
 
-               
 
-                HTML:
 
-                Structure: Elements such as text fields < textarea >, lists < ul >, buttons < button >, and other UI components are structurally defined using HTML tags.
-                CSS:
-                
-                Styling: Within the  style  section, CSS styles define the appearance and layout of elements on the page. Styling includes aspects like background color background-color, margins margin, fonts font-family, font-size, and scrollbar appearance scrollbar.
+                HTML (HyperText Markup Language):
+                The HTML structure defines the document sections like < head > and < body > and the user interface elements such as text fields, buttons, and images < input >, < button >, < img >.
+
+                CSS (Cascading Style Sheets):
+                CSS styles are applied to enhance the appearance of user interface elements, like color schemes, font sizes, margins, and borders. CSS selectors, such as .form input, .form button, are utilized for styling.
+
                 JavaScript:
-                
-                User Interactions: The JavaScript code within the  script > section handles user interactions with the application. It manages adding new tasks (addEventListener), marking tasks as completed or undoing that action (onclick, classList.toggle), deleting tasks (remove), and updating displayed data on the page.
-                These technologies are used across different facets of the webpage, ensuring comprehensive functionality for managing a task list.
-                
-                
+                JavaScript handles events like button clicks or text input in fields, e.g., generateBtn.addEventListener("click", ...), qrInput.addEventListener("keyup", ...). It modifies the page content, generating the QR code based on user input (qrImg.src = '...'). It also adds CSS classes to HTML elements (wrapper.classList.add("active")) to change their appearance. The code includes conditionals and loops (e.g., if (!qrValue || preValue === qrValue) return;) for validation and control flow.
+
+                Each of these technologies plays a crucial role in the functioning of the application, collaborating to provide interactivity and responsiveness to the user interface."
                 
                 
                 
@@ -109,13 +108,15 @@
 
 <center>
    <section id="portfolio">
-    <h3 class="heading"  data-lang="en" >QR<span>Code</span></h3>
-    <br><br><br><br>
-    <div class="wrapper">
+    <h2  class="heading">QR <span>Code</span></h2>
+      <br><br><br><br>
+      <div class="wrapper">
+        <header>
 
+        </header>
         <div class="form">
-          <input type="text" spellcheck="false" placeholder="Url | Text ">
-          <button>Generate</button>
+          <input type="text" spellcheck="false" placeholder="Enter text or url">
+          <button>Generate QR</button>
         </div>
         <div class="qr-code">
           <img src="" alt="qr-code">
@@ -140,41 +141,44 @@
 
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="../script.js"></script>
+
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 <script>
-    const wrapper = document.querySelector(".wrapper"),
-  qrInput = wrapper.querySelector(".form input"),
-  generateBtn = wrapper.querySelector(".form button"),
-  qrImg = wrapper.querySelector(".qr-code img");
-let preValue;
-
-generateBtn.addEventListener("click", () => {
-  let qrValue = qrInput.value.trim();
-  if (!qrValue || preValue === qrValue) return;
-  preValue = qrValue;
-  generateBtn.innerText = "Generating QR Code...";
-  qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
-  qrImg.addEventListener("load", () => {
-    wrapper.classList.add("active");
-    generateBtn.innerText = "Generate QR Code";
+  const wrapper = document.querySelector(".wrapper"),
+    qrInput = wrapper.querySelector(".form input"),
+    generateBtn = wrapper.querySelector(".form button"),
+    qrImg = wrapper.querySelector(".qr-code img");
+  let preValue;
+  
+  generateBtn.addEventListener("click", () => {
+    let qrValue = qrInput.value.trim();
+    if (!qrValue || preValue === qrValue) return;
+    preValue = qrValue;
+    generateBtn.innerText = "Generating QR Code...";
+    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+    qrImg.addEventListener("load", () => {
+      wrapper.classList.add("active");
+      generateBtn.innerText = "Generate QR Code";
+    });
   });
-});
-
-qrInput.addEventListener("keyup", () => {
-  if (!qrInput.value.trim()) {
-    wrapper.classList.remove("active");
-    preValue = "";
-  }
-});
-</script>
-
+  
+  qrInput.addEventListener("keyup", () => {
+    if (!qrInput.value.trim()) {
+      wrapper.classList.remove("active");
+      preValue = "";
+    }
+  });
+  </script>
 </body>
 
 </html>
 
 <style>
+
+
+
 
 .wrapper {
 border-radius: 20px;
@@ -189,7 +193,7 @@ box-shadow: 0 8px 25px #50409A;
 }
 
 .wrapper.active {
-  height: 400px;
+  height: 420px;
 }
 
 
@@ -247,7 +251,8 @@ header p {
 }
 
 .qr-code img {
-  width: 170px;
+  width: 200px;
+  height: 200px;
 }
 
 @media (max-width: 430px) {
@@ -268,9 +273,100 @@ header p {
     width: 160px;
   }
 }
+
 </style>
 
   
+<script>
+  let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
+
+
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
+
+
+
+let header = document.querySelector('.header');
+
+header.classList.toggle('sticky', window.scrollY > 100);
+
+
+
+menuIcon.classList.remove('bx-x');
+navbar.classList.remove('active');
+
+};
+
+
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    loop: true,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+});
+
+
+
+let darkModeIcon = document.querySelector('#darkMode-icon');
+
+darkModeIcon.onclick = () => {
+    darkModeIcon.classList.toggle('bx-sun');
+    document.body.classList.toggle('dark-mode');
+};
+
+
+
+ScrollReveal({
+   
+    distance: '80px',
+    duration: 2000,
+    delay: 200
+});
+
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
+ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
+
+
+function toggleBackgroundColor() {
+    const body = document.querySelector('body');
+    const currentColor = body.style.backgroundColor || getComputedStyle(body).backgroundColor;
+    body.style.backgroundColor = currentColor === 'rgb(243, 243, 243)' ? '#f9f9f9' : '#f3f3f3'; // Zmiana koloru tła
+  }
+
+</script>
 
 
 
@@ -281,6 +377,10 @@ header p {
 
 
 
+
+
+
+ 
 
 
 

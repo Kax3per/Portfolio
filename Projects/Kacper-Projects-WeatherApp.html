@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../favicon.PNG" type="image/x-icon">
+  <link rel="shortcut icon"  href="../images/favicon.PNG" type="image/x-icon">
   <title>Kacper Siwoń - Weather App</title>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -76,32 +76,30 @@
        <div class="about-content">
             <h2 class="heading" data-lang="en">About <span>Weathr App</span></h2>
             <p>
-                How it works:
-                The application features a text field where users can input new tasks. When a user enters a new task and hits the Enter key, it gets added to the list. Tasks can be marked as completed or unchecked by clicking on them. Each task has a trash icon for deletion upon clicking. The count of pending tasks to be completed is displayed for user reference.
+                <b>How it works:</b>The Weather App operates on an API that provides weather information based on the city entered by the user. Users input a city name, triggering the application to send a request to the API server with that specific name. The API responds with weather data for the provided city, including details such as temperature, atmospheric conditions, and wind speed. The application then retrieves and presents this weather data to the user, offering insights into the weather conditions of the chosen location.
             </p>
             <p data-lang="en">
-                Technologies used in a nutshell:
+               <b> Technologies used in a nutshell:</b>
                 HTML, CSS, JavaScript: These are web programming languages used for content creation, styling, and website interactivity.
 
                
 
                 HTML:
-
-                Structure: Elements such as text fields < textarea >, lists < ul >, buttons < button >, and other UI components are structurally defined using HTML tags.
+                As a foundational structural component, HTML defines the layout of the page and user interface elements such as text fields, buttons, or headers. It enables user data input and displaying weather information.
+                
                 CSS:
+                Application styling occurs through CSS. This language is responsible for the look and layout of elements on the page. By defining colors, sizes, fonts, and other visual properties, CSS provides an attractive appearance to the application, ensuring readability and an aesthetic appeal for users.
                 
-                Styling: Within the  style  section, CSS styles define the appearance and layout of elements on the page. Styling includes aspects like background color background-color, margins margin, fonts font-family, font-size, and scrollbar appearance scrollbar.
                 JavaScript:
+                JavaScript is responsible for user interaction and data management. In the case of the weather application, JavaScript sends requests to the API server, retrieves weather data, and updates the user interface. It also handles click events, data input, and real-time updates of displayed information.
                 
-                User Interactions: The JavaScript code within the  script > section handles user interactions with the application. It manages adding new tasks (addEventListener), marking tasks as completed or undoing that action (onclick, classList.toggle), deleting tasks (remove), and updating displayed data on the page.
-                These technologies are used across different facets of the webpage, ensuring comprehensive functionality for managing a task list.
+                API:
+                It's a pivotal component of this application. It leverages weather APIs that provide weather information for specific locations. The application sends requests to this API, which responds with weather data such as temperature, precipitation, humidity, or wind speed.
                 
+                Libraries and Frameworks:
+                The code also utilizes various libraries and frameworks like Swiper.js and ScrollReveal.js. Swiper.js facilitates carousel slide handling, useful for presenting different data on the page. ScrollReveal.js allows adding animation effects while scrolling through the page.
                 
-                
-                
-                
-                
-                
+                These technologies collaborate, forming a complete ecosystem for the weather application. HTML and CSS define the appearance and structure, JavaScript handles interactions and dynamic content management, while the API supplies necessary weather information. Additionally, libraries and frameworks add further functionalities that can enhance the user experience.
             </p>
             
         </div>
