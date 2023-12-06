@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.PNG" type="image/x-icon">
+    <title>Kacper Siwoń - CV Creator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styleimagessearches.css">
+  
+</head>
+<body>
+
+    <header class="header">
+        <a href="../index.html#portfolio" class="logo" data-lang="en">KACPER</a>
+
+        <nav class="navbar">
+            <a href="#home" class="active" data-lang="en">Home</a>
+            <a href="#about"data-lang="en">About</a>
+            <a href="#portfolio"data-lang="en">Image Searcher</a>
+ 
+        </nav>
+
+        <div class="bx bx-moon" id="darkMode-icon"></div>
+
+        
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1 style="font-size: 70px;">Images Searcher</h1>
+ 
+           
+            <div class="social-media">
+                <a href="https://www.facebook.com/kacper.siwon" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://instagram.com/_kac3per_?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://www.linkedin.com/in/kacper-siwo%C5%84/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            </div>
+         
+            
+         
+            <br><br>
+            
+        </div>
+        
+        <div class="profession-container" >
+
+
+            <div class="overlay"></div>
+        </div>
+
+  
+    </section>
+
+    
+  <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/about.png" alt="">
+        </div>
+
+       <div class="about-content">
+            <h2 class="heading" data-lang="en">About <span>Images Searcher</span></h2>
+            
+               
+            <p>How It Works:
+                This code orchestrates a simple image search interface. Users input image descriptions, triggering a JavaScript function upon clicking the search icon. The searchImages() function, when activated, fetches data from the Unsplash API based on the entered description. Upon receiving the API response, it dynamically generates HTML elements for image thumbnails.
+            </p>
+                <p>
+                HTML:
+                Page Structure: Defines the webpage elements such as headers, text fields, buttons, and result containers.
+                Content Tags: Used to place visual elements like headers < h1 >, < h2 >, input fields < input >, buttons, and the search result area.
+                Link Tags: Utilized for importing icons through < link > in the < head > section and loading scripts <' script '> for external libraries
+            </p>
+
+                <p>CSS:
+                Styling Elements: Defines the webpage's appearance, including color schemes, fonts, margins, borders, background, etc.
+                Element-Specific Settings: Specifies how individual elements should be displayed, such as header styles < h1 >, spacing between elements, background colors, etc.</p>
+
+                
+                <p>JavaScript:
+                User Interaction Handling: Reacts to user interactions, like triggering the searchImages() function after clicking a button.
+                API Communication: Utilizes Fetch API to send requests to the Unsplash service to fetch image data based on the entered description.
+                DOM Manipulation: Dynamically creates HTML elements based on data received from the API and places them on the webpage.
+                Error Handling & Alerts: Displays an alert message in case of errors, like an empty input field requiring a description.
+            </p>
+            <p>Fetch API:
+                API Connectivity: Allows sending requests to the Unsplash service, fetching image data based on the entered description.
+                Asynchronous Data Retrieval: Functions asynchronously, allowing data retrieval without blocking user interactions, ensuring smooth application performance. </p>
+               
+
+            </p>
+            
+        </div>
+    </section> 
+
+
+    <section id="portfolio">
+        <h2 class="heading" data-lang="en">CV <span>Creator</span></h2>
+        <br><br><br>
+
+<center>
+        <div class="container">
+            <h1>Generator CV</h1>
+          
+            <div>
+              <label for="name">Name and Surname / Imię i Nazwisko:</label>
+              <textarea type="text" id="name" required></textarea><br>
+              <div class="cv-section">
+                <label for="bio">About me / O mnie:</label>
+                <textarea id="bio" rows="4" required></textarea>
+              </div>
+              <div class="cv-section">
+                <label for="experience">Experience / Doświadczenie:</label>
+                <textarea id="experience" rows="4" required></textarea>
+              </div>
+              
+              <div class="cv-section">
+                <label for="skills">Skills / Umiejętności:</label>
+                <textarea id="skills" rows="4" required></textarea>
+              </div>
+              <div class="cv-section">
+                <label for="softSkills">Soft Skills / Umiejętności miękkie:</label>
+                <textarea id="softSkills" rows="4"></textarea>
+              </div>
+              <div class="cv-section">
+                <label for="education">Education / Edukacja:</label>
+                <textarea id="education" rows="4" required></textarea>
+              </div>
+              <div class="cv-section">
+                <label for="interests">Interests / Zainteresowania:</label>
+                <textarea id="interests" rows="4"></textarea>
+              </div>
+              <label for="template">Choose CV Template / Wybierz szablon CV:</label>
+              <select id="template">
+                <option value="basic">Basic / Podstawowy</option>
+                <option value="modern">Modern / Nowoczesny</option>
+                <option value="creative">Creative / Kreatywny</option>
+              </select>
+        
+              <label for="language">Choose Language / Wybierz język:</label>
+              <select id="language">
+                <option value="en">English / Angielski</option>
+                <option value="pl">Polish / Polski</option>
+              </select>
+              
+              <button onclick="generateCV()">Generate CV / Generuj CV</button>
+              <button onclick="downloadPDF()">Download CV / Pobierz CV</button>
+            </div>
+            
+            <div id="cvPreview"></div>
+          </div>
+
+    </section>
+</center>
+
+
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 | All Rights Reserved.</p>
+        </div>
+    
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+
+
+
+
+  <script>
+    function generateCV() {
+      const name = document.getElementById('name').value;
+      const bio = document.getElementById('bio').value;
+      const experience = document.getElementById('experience').value;
+      const skills = document.getElementById('skills').value;
+      const education = document.getElementById('education').value;
+      const interests = document.getElementById('interests').value;
+      const softSkills = document.getElementById('softSkills').value;
+      const template = document.getElementById('template').value;
+      const language = document.getElementById('language').value;
+
+      let cvTemplate = '';
+      if (language === 'en') {
+        // Sprawdzanie, czy pola nie są puste
+        if (name.trim() && bio.trim() && experience.trim() && skills.trim() && education.trim()) {
+          if (template === 'basic') {
+            // Tworzenie podstawowego szablonu
+            cvTemplate = `
+              <h3>${name}</h3>
+              <p>About me:</h4>
+              <h3>${bio}</h3>
+              <h4>Experience</h4>
+              <p>${experience}</p>
+              <h4>Skills:</h4>
+              <p>${skills}</p>
+              <h4>Soft Skills:</h4>
+              <p>${softSkills}</p>
+              <h4>Education:</h4>
+              <p>${education}</p>
+              <h4>Interests:</h4>
+              <p>${interests}</p>
+            `;
+          } else if (template === 'modern') {
+            // Tworzenie nowoczesnego szablonu
+            cvTemplate = `
+              <div style="background-color: #f4f4f4; padding: 10px; border-radius: 5px;">
+                <h3>${name}</h3>
+              <h4>About me:</h4>
+              <p>${bio}</h3>
+              <h4>Experience</h4>
+              <p>${experience}</p>
+              <h4>Skills:</h4>
+              <p>${skills}</p>
+              <h4>Soft Skills:</h4>
+              <p>${softSkills}</p>
+              <h4>Education:</h4>
+              <p>${education}</p>
+              <h4>Interests:</h4>
+              <p>${interests}</p>
+              </div>
+            `;
+          } else if (template === 'creative') {
+            // Tworzenie kreatywnego szablonu
+            cvTemplate = `
+              <div style="border: 2px solid #333; padding: 20px; border-radius: 10px;">
+                <h3>${name}</h3>
+              <h4>About me:</h4>
+              <p>${bio}</h3>
+              <h4>Experience</h4>
+              <p>${experience}</p>
+              <h4>Skills:</h4>
+              <p>${skills}</p>
+              <h4>Soft Skills:</h4>
+              <p>${softSkills}</p>
+              <h4>Education:</h4>
+              <p>${education}</p>
+              <h4>Interests:</h4>
+              <p>${interests}</p>
+              </div>
+            `;
+          }
+          // Wyświetlanie podglądu CV
+          document.getElementById('cvPreview').innerHTML = cvTemplate;
+        } else {
+          // Jeśli pola są puste, wyświetl komunikat
+          alert('Please fill in all required fields / Proszę wypełnić wszystkie wymagane pola.');
+        }
+      } else if (language === 'pl') {
+        // Sprawdzanie, czy pola nie są puste
+        if (name.trim() && bio.trim() && experience.trim() && skills.trim() && education.trim()) {
+          if (template === 'basic') {
+            // Tworzenie podstawowego szablonu
+            cvTemplate = `
+              <h3>${name}</h3>
+              <h4>O mnie:</h4>
+              <p>${bio}</h3>
+              <h4>Doświadczenie:</h4>
+              <p>${experience}</p>
+              <h4>Umiejętności<h4>
+              <p>${skills}</p>
+              <h4>Umiejętności miękkie:</h4>
+              <p>${softSkills}</p>
+              <h4>Edukacja:</h4>
+              <p>${education}</p>
+              <h4>Zainteresowania:</h4>
+              <p>${interests}</p>
+            `;
+          } else if (template === 'modern') {
+            // Tworzenie nowoczesnego szablonu
+            cvTemplate = `
+              <div style="background-color: #f4f4f4; padding: 10px; border-radius: 5px;">
+                <h3>${name}</h3>
+              <h4>O mnie:</h4>
+              <p>${bio}</h3>
+              <h4>Doświadczenie:</h4>
+              <p>${experience}</p>
+              <h4>Umiejętności<h4>
+              <p>${skills}</p>
+              <h4>Umiejętności miękkie:</h4>
+              <p>${softSkills}</p>
+              <h4>Edukacja:</h4>
+              <p>${education}</p>
+              <h4>Zainteresowania:</h4>
+              <p>${interests}</p>
+              </div>
+            `;
+          } else if (template === 'creative') {
+            // Tworzenie kreatywnego szablonu
+            cvTemplate = `
+              <div style="border: 2px solid #333; padding: 20px; border-radius: 10px;">
+                <h3>${name}</h3>
+              <h4>O mnie:</h4>
+              <p>${bio}</h3>
+              <h4>Doświadczenie:</h4>
+              <p>${experience}</p>
+              <h4>Umiejętności<h4>
+              <p>${skills}</p>
+              <h4>Umiejętności miękkie:</h4>
+              <p>${softSkills}</p>
+              <h4>Edukacja:</h4>
+              <p>${education}</p>
+              <h4>Zainteresowania:</h4>
+              <p>${interests}</p>
+              </div>
+            `;
+          }
+          // Wyświetlanie podglądu CV
+          document.getElementById('cvPreview').innerHTML = cvTemplate;
+        } else {
+          // Jeśli pola są puste, wyświetl komunikat
+          alert('Proszę wypełnić wszystkie wymagane pola.');
+        }
+      }
+    }
+
+    
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script>
+    function downloadPDF() {
+      const cvPreview = document.getElementById('cvPreview');
+  
+      // Utwórz nowy obiekt jsPDF
+      const pdf = new jsPDF();
+  
+      // Pozyskaj tekst z podglądu CV
+      const content = cvPreview.innerText;
+  
+      // Dodaj tekst do dokumentu PDF
+      pdf.text(content, 10, 10);
+  
+      // Pobierz plik PDF o nazwie "CV.pdf"
+      pdf.save('CV.pdf');
+    }
+  </script>
+    </body>
+    </html>
+
+    <style>
+
+   
+    
+        .container {
+          width: 90%;
+          max-width: 600px;
+          margin-bottom: 50px;
+          padding: 20px;
+          background-color:transparent;
+          border-radius: 5px;
+          box-shadow: 0 0 10px #50409A;
+        }
+    
+        label, textarea, select, button {
+          display: block;
+          margin-bottom: 10px;
+          width: calc(100% - 20px);
+          padding: 10px;
+          border: 1px solid #50409A;
+          border-radius: 5px;
+          box-sizing: border-box;
+          font-size: 16px;
+        }
+    
+        textarea {
+          resize: vertical;
+          height: 120px;
+        }
+    
+        button {
+          background-color: #50409A;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+    
+        button:hover {
+          background-color: #313866;
+        }
+    
+        #cvPreview {
+          margin-top: 30px;
+          border-top: 2px solid #ccc;
+          padding-top: 20px;
+        }
+    
+        #cvPreview h3, #cvPreview h4, #cvPreview p {
+          margin-bottom: 10px;
+        }
+    
+        .cv-section {
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+        }
+      </style>
+
+      
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

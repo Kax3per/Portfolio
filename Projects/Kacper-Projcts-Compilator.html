@@ -162,3 +162,237 @@
 </body>
 
 </html>
+<style>
+     main.editor {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .code-editor {
+      flex: 3;
+      border-top: 1px solid var(--main-color) ;
+      border-bottom: 1px solid var(--main-color) ;
+      border-left: 1px solid var(--main-color) ;
+      display: flex;
+      flex-direction: column;
+      padding:20px 20px 20px 20px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      
+    }
+
+  
+    .code-section {
+      flex: 1;
+      margin-bottom: 20px; /* Obniżone miejsce dla loga */
+      position: relative;
+      break-inside: avoid;
+      margin-right: 15px;
+
+    }
+
+  
+
+    textarea {
+      width: 99%;
+      height: 90%;
+      resize: none;
+      border: 1px solid var(--main-color) ;
+      padding: 10px;
+      color: #333;
+      font-family: 'Poppins', sans-serif;
+      border-radius: 5px;
+      font-size: 20px;
+      
+    }
+
+
+  
+    .result {
+
+      width: 45%;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 30px; 
+
+      
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: white;
+      border-radius: 5px;
+      border-radius: 20px;
+      border: 1px solid var(--main-color) ;
+      
+    }
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl" xml:lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.PNG" type="image/x-icon">
+    <title>Kacper Siwoń - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>  
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="stylecompilator.css">
+</head>
+
+<body>
+
+
+    <header class="header">
+        <a href="index.html" class="logo"class="heading" data-lang="en">KACPER </a>
+
+        <nav class="navbar">
+            <a href="#home" class="active" data-lang="en">Home</a>
+            <a href="#about"data-lang="en">About</a>
+            <a href="#services"data-lang="en">Skils</a>
+            <a href="#portfolio"data-lang="en">Projects</a>
+            <a href="#contact"data-lang="en">Contact</a>
+        </nav>
+
+        <div class="bx bx-moon" id="darkMode-icon"></div>
+
+        
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+
+    <section class="home" id="home">
+        <div class="home-content">
+
+            <div class="social-media">
+                <a href="https://www.facebook.com/kacper.siwon" target="_blank"><i class='bx bxl-facebook'></i></a>
+                <a href="https://instagram.com/_kac3per_?igshid=YzAwZjE1ZTI0Zg%3D%3D&utm_source=qr" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://www.linkedin.com/in/kacper-siwo%C5%84/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="tel:723974899"><iconify-icon icon="bx:phone"></iconify-icon></a>
+            </div>
+            <br><br>
+           
+        </div>
+        
+        <div class="profession-container" >
+            <div class="profession-box">
+         
+
+              
+            </div>
+
+            <div class="overlay"></div>
+        </div>
+
+        <div class="home-img">
+            <img src="" alt="">
+        </div>
+    </section>
+
+    
+  <section class="about" id="about">
+        <div class="about-img">
+  
+        </div>
+
+       <div class="about-content">
+            <h2 class="heading" data-lang="en">About <span>Me</span></h2>
+            <p data-lang="en">
+                I've got a real thing for creating websites. It's not just about the way they look but also the nitty-gritty of how they're built, coded, and made to run smoothly. I tinker with different coding languages, exploring how to express my creativity and make some cool, functional websites.
+            </p>
+            <p data-lang="en">
+                For me, programming isn't just about getting better at it; it's about crafting practical solutions. I'm always jumping into hands-on projects to improve my skills and gain experience to make a mark in the tech world.
+            </p>
+            
+        </div>
+    </section> 
+
+  
+        <br><br><br><br><br>
+    <section class="portfolio" id="portfolio">
+         <h2 class="heading" data-lang="en"><span>My </span>Projects</h2>
+       
+
+
+         <main class="editor" >
+          <div class="code-editor" onclick="">
+            <div class="code-section">
+           
+              <textarea id="htmlCode" placeholder=" HTML code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
+            </div>
+            <div class="code-section">
+              
+              <textarea id="cssCode" placeholder=" CSS code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
+            </div>
+            <div class="code-section">
+            
+              <textarea id="javascriptCode" placeholder=" JavaScript code " spellcheck="false" oninput="update(0)" onkeydown="handleTabKey(event, this);"></textarea>
+              <center>
+                  
+                  <button class="btn" onclick="saveHTMLFile()">DOWNLOAD CODE</button>
+                </center>
+            </div>
+          </div>
+       
+          <div class="result">
+    
+            <iframe id="viewer"></iframe>
+            
+      
+      
+          </div>
+        </main>
+
+
+
+    </section>
+
+  
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 | All Rights Reserved.</p>
+        </div>
+
+        
+        <div class="footer-iconTop">
+            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
+-->
