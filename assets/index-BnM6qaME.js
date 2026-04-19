@@ -30,27 +30,36 @@ Error generating stack: `+e.message+`
         .animate-fade {
           animation: fade 0.5s ease;
         }
-      `})]})}var de=`/Portfolio/assets/AuroraPrev-By-npUyY.png`,fe=`/Portfolio/assets/CryptoXPrev-8zeM3Ckz.png`,pe=`/Portfolio/assets/ProBudPrev-bY4MpHLK.png`,O=`/Portfolio/assets/PersonalTrainerPrev-BZF-SoNc.png`;function k(){let e=(0,_.useRef)(null),{lang:t}=le(),n=E[t].projects,[r,i]=(0,_.useState)(0),[a,o]=(0,_.useState)(0),s=[de,fe,pe,O];return(0,_.useEffect)(()=>{let t=()=>{let t=e.current.getBoundingClientRect(),r=window.innerHeight,a=Math.min(1,Math.max(0,-t.top/(t.height-r)));i(Math.min(n.items.length-1,Math.floor(a*n.items.length))),o(a*80)};return window.addEventListener(`scroll`,t),()=>window.removeEventListener(`scroll`,t)},[n.items.length]),(0,T.jsxs)(`section`,{ref:e,className:`relative h-[400vh] dark:bg-white dark:text-black`,children:[(0,T.jsxs)(`div`,{className:`sticky top-0 h-screen overflow-hidden flex items-center`,children:[(0,T.jsxs)(`div`,{className:`grid xl:grid-cols-2 w-full px-6 xl:px-20 items-center`,children:[(0,T.jsxs)(`div`,{className:`max-w-xl`,children:[(0,T.jsx)(`p`,{className:`text-[10px] tracking-[0.4em] dark:text-black/30 mb-3 uppercase`,children:n.header}),(0,T.jsx)(`p`,{className:`text-[10px] tracking-[0.4em] dark:text-black/40 mb-2 uppercase`,children:n.concept}),(0,T.jsx)(`h2`,{className:`text-[36px] sm:text-[56px] xl:text-[72px] font-light tracking-[0.2em] mb-6 animate-slide`,children:n.items[r].title},r+`-title`),(0,T.jsx)(`p`,{className:`dark:text-black/60 text-[16px] sm:text-[18px] leading-relaxed max-w-md animate-fade delay-200`,children:n.items[r].desc},r+`-desc`),(0,T.jsx)(`a`,{href:n.items[r].url,target:`_blank`,rel:`noopener noreferrer`,className:`inline-block mt-10 border border-black dark:border-white px-8 py-3 text-sm tracking-[0.3em] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition`,children:n.button})]}),(0,T.jsxs)(`div`,{className:`relative h-[400px] xl:h-[500px] flex items-center justify-center`,children:[s.map((e,t)=>(0,T.jsx)(`div`,{className:`absolute transition-all duration-700 ${r===t?`opacity-100 scale-100`:`opacity-0 scale-110`}`,style:{transform:`translateY(${a}px)`},children:(0,T.jsx)(`img`,{src:e,className:`w-[320px] sm:w-[420px] xl:w-[920px] rounded-2xl shadow-[0_40px_120px_rgba(0,0,0,0.25)]`})},t)),(0,T.jsx)(`div`,{className:`absolute w-[500px] h-[500px] dark:bg-black/5 blur-3xl rounded-full`})]})]}),(0,T.jsx)(`div`,{className:`absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4`,children:n.items.map((e,t)=>(0,T.jsx)(`div`,{className:`w-[2px] h-10 transition ${r===t?`dark:bg-black`:`dark:bg-black/20`}`},t))})]}),(0,T.jsx)(`style`,{jsx:!0,children:`
+      `})]})}var de=`/Portfolio/assets/AuroraPrev-By-npUyY.png`,fe=`/Portfolio/assets/CryptoXPrev-8zeM3Ckz.png`,pe=`/Portfolio/assets/ProBudPrev-bY4MpHLK.png`,O=`/Portfolio/assets/PersonalTrainerPrev-BZF-SoNc.png`;function k(){let e=(0,_.useRef)(null),{lang:t}=le(),n=E[t].projects,[r,i]=(0,_.useState)(0),[a,o]=(0,_.useState)(0),s=[de,fe,pe,O];return(0,_.useEffect)(()=>{let t=()=>{let t=e.current.getBoundingClientRect(),r=window.innerHeight,a=Math.min(1,Math.max(0,-t.top/(t.height-r)));i(Math.min(n.items.length-1,Math.floor(a*n.items.length))),o(a*80)};return window.addEventListener(`scroll`,t),()=>window.removeEventListener(`scroll`,t)},[n.items.length]),(0,T.jsxs)(`section`,{ref:e,className:`relative h-[400vh] bg-white text-black`,children:[(0,T.jsxs)(`div`,{className:`sticky top-0 h-screen overflow-hidden flex items-center`,children:[(0,T.jsxs)(`div`,{className:`grid xl:grid-cols-2 w-full px-6 xl:px-20 items-center`,children:[(0,T.jsxs)(`div`,{className:`max-w-xl`,children:[(0,T.jsx)(`p`,{className:`text-[10px] tracking-[0.4em] text-black/30 mb-3 uppercase`,children:n.header}),(0,T.jsx)(`p`,{className:`text-[10px] tracking-[0.4em] text-black/40 mb-2 uppercase`,children:n.concept}),(0,T.jsx)(`h2`,{className:`text-[36px] sm:text-[56px] xl:text-[72px] font-light tracking-[0.2em] mb-6 animate-slide`,children:n.items[r].title},r),(0,T.jsx)(`p`,{className:`text-black/60 text-[16px] sm:text-[18px] leading-relaxed max-w-md animate-fade delay-200`,children:n.items[r].desc},r+`-desc`),(0,T.jsx)(`a`,{href:n.items[r].url,target:`_blank`,rel:`noopener noreferrer`,className:`\r
+              inline-block mt-10 \r
+              border border-black \r
+              px-8 py-3 text-sm tracking-[0.3em] \r
+              hover:bg-black hover:text-white \r
+              transition\r
+              `,children:n.button})]}),(0,T.jsxs)(`div`,{className:`relative h-[400px] xl:h-[500px] flex items-center justify-center`,children:[s.map((e,t)=>{let n=_.createRef();return(0,T.jsx)(`div`,{className:`absolute transition-all duration-700 ${r===t?`opacity-100 scale-100`:`opacity-0 scale-110`}`,style:{transform:`translateY(${a*.6}px)`},children:(0,T.jsx)(`div`,{ref:n,onMouseMove:e=>{if(window.innerWidth<768)return;let t=n.current,r=t.getBoundingClientRect(),i=(e.clientX-r.left)/r.width-.5,a=(e.clientY-r.top)/r.height-.5;t.style.transform=`
+        perspective(900px)
+        rotateX(${a*-8}deg)
+        rotateY(${i*8}deg)
+        scale(1.03)
+      `},onMouseLeave:()=>{let e=n.current;e.style.transform=`
+        perspective(900px)
+        rotateX(0deg)
+        rotateY(0deg)
+        scale(1)
+      `},className:`transition-transform duration-300 ease-out will-change-transform`,children:(0,T.jsx)(`img`,{src:e,className:`\r
+              w-[320px] sm:w-[420px] xl:w-[920px]\r
+              rounded-2xl\r
+              shadow-[0_40px_120px_rgba(0,0,0,0.25)]\r
+              transition duration-300\r
+            `})})},t)}),(0,T.jsx)(`div`,{className:`absolute w-[500px] h-[500px] bg-black/5 blur-3xl rounded-full`})]})]}),(0,T.jsx)(`div`,{className:`absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4`,children:n.items.map((e,t)=>(0,T.jsx)(`div`,{className:`w-[2px] h-10 transition ${r===t?`bg-black`:`bg-black/20`}`},t))})]}),(0,T.jsx)(`style`,{children:`
         @keyframes fade {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes slide {
-          from {
-            opacity: 0;
-            transform: translateY(60px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(60px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         .animate-fade {
