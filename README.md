@@ -1,16 +1,104 @@
-# React + Vite
+Developer Portfolio Website
+https://kax3per.github.io/Portfolio/
+============================
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance portfolio website designed to showcase projects, skills, and development approach.
+Focused on clean UI, smooth UX, and strong personal branding.
+------------
 
-Currently, two official plugins are available:
+Overview
+This project is a fully responsive portfolio website created to present my work, highlight skills, and demonstrate real-world frontend capabilities.
+The layout follows a clear flow:
+Hero → Projects → About → Skills → Contact
+Each section is designed to guide visitors — from introduction to project exploration and final contact.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+Key Features
+ - UX & Structure
+Clear and intuitive navigation
+Logical content flow for portfolio presentation
+Smooth scrolling between sections
+-----------
+ - UI Design
+Modern, minimal aesthetic
+Consistent typography and spacing system
+Clean layout focused on readability
+Fully responsive (mobile-first approach)
+-----------
+ - Interactivity
+Smooth hover effects and transitions
+Dynamic project showcase
+Interactive navigation experience
+-----------
+  - Performance
+Lightweight structure
+Fast loading times
+Optimized rendering and animations
+-------------
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tech Stack
+React – component-based architecture
+Tailwind CSS – utility-first styling
+JavaScript (ES6+) – logic and interactions
+React Hooks – state and lifecycle management
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The project is organized into clear layers:
+components/ → reusable UI elements
+sections/ → main page sections (Hero, Projects, etc.)
+layout/ → wrappers and global structure
+pages/ → page composition
+Each section is built as an independent module, making the code scalable and easy to maintain.
+
+
+Development Approach (AI + Manual Work)
+This project was built using a modern workflow that combines manual development with AI-assisted tools.
+
+AI is used to:
+speed up development
+improve code consistency
+explore UI/UX solutions faster
+assist in problem solving
+
+However, all key decisions — including layout, structure, and interactions — are designed and implemented manually.
+
+AI is a tool, not a replacement.
+
+This approach allows for:
+faster iteration
+cleaner code
+better overall quality
+
+
+Purpose
+This project can serve as:
+
+💼 Personal portfolio
+
+🧑‍💻 Showcase of frontend skills
+
+📂 Central hub for projects
+
+🚀 Base for personal brand and freelance work
+
+
+Future Improvements
+CMS integration for easier updates
+Advanced animations
+SEO optimization
+Analytics integration
+
+
+Author
+Developed by Kacper
+----------------
+
+I build modern, performance-focused websites with strong attention to:
+
+UI/UX
+
+interactivity
+
+clean architecture
+
+Using a combination of frontend expertise and AI-supported workflow, I deliver projects faster without sacrificing quality.
