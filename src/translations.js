@@ -1,8 +1,8 @@
 const translations = {
   pl: {
     nav: {
-      projects: "Projekty",
       about: "O mnie",
+      projects: "Projekty",
       contact: "Kontakt",
     },
 
@@ -38,21 +38,25 @@ const translations = {
           title: "AURORA",
           tag: "PREMIUM EXPERIENCE",
           desc: "Interaktywny landing page z animacjami, parallaxem i konfiguracją produktu.",
+          url : "https://kax3per.github.io/Aurora/"
         },
         {
           title: "CRYPTOX",
           tag: "WEB APPLICATION",
           desc: "Nowoczesny interfejs aplikacji kryptowalutowej z naciskiem na UX i dane.",
+          url : "https://kax3per.github.io/CryptoX/"
         },
         {
           title: "PROBUD",
           tag: "BUSINESS WEBSITE",
           desc: "Strona dla firmy budowlanej zaprojektowana pod pozyskiwanie klientów.",
+          url : "https://kax3per.github.io/Probud/"
         },
         {
           title: "PERSONAL TRAINER",
           tag: "PERSONAL BRAND",
           desc: "Landing page dla trenera personalnego skupiony na konwersji.",
+          url : "https://kax3per.github.io/PersonalTrainer/"
         },
       ],
     },
@@ -122,21 +126,25 @@ const translations = {
           title: "AURORA",
           tag: "PREMIUM EXPERIENCE",
           desc: "Interactive landing page with animations, parallax and product configurator.",
+          url : "https://kax3per.github.io/Aurora/"
         },
         {
           title: "CRYPTOX",
           tag: "WEB APPLICATION",
           desc: "Modern crypto app interface focused on UX and real-time data.",
+          url : "https://kax3per.github.io/CryptoX/"
         },
         {
           title: "PROBUD",
           tag: "BUSINESS WEBSITE",
           desc: "Website for a construction company designed for lead generation.",
+          url : "https://kax3per.github.io/Probud/"
         },
         {
           title: "PERSONAL TRAINER",
           tag: "PERSONAL BRAND",
           desc: "Landing page for a personal trainer focused on conversions.",
+          url : "https://kax3per.github.io/PersonalTrainer/"
         },
       ],
     },

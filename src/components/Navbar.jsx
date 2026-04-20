@@ -1,146 +1,205 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { useLanguage } from "../LanguageContext";
+import { useLanguage } from "./LanguageContext";
 import translations from "../translations";
-import ThemePullSwitch from "./ThemePullSwitch";
 
+/**
+ * Navbar Component
+ * ----------------
+ * Main navigation component responsible for:
+ * - Rendering desktop and mobile navigation
+ * - Handling smooth scrolling between sections
+ * - Managing active section state based on scroll position
+ * - Providing language switch functionality
+ * - Controlling mobile menu visibility
+ */
 export default function Navbar() {
+  /** Controls mobile menu visibility */
   const [open, setOpen] = useState(false);
 
+  /** Stores currently active section (used for highlighting nav links) */
+  const [active, setActive] = useState("about");
+
+  /** Language context (global state) */
   const { lang, setLang } = useLanguage();
+
+  /** Translations object for current language */
   const t = translations[lang];
+
+  /**
+   * Effect: Scroll listener
+   * -----------------------
+   * Detects which section is currently in viewport
+   * and updates `active` state accordingly.
+   *
+   * Runs once on mount.
+   */
+  useEffect(() => {
+    const sections = ["about", "projects", "contact"];
+
+    /**
+     * Handles scroll event
+     * Determines active section based on scroll position
+     */
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const top = el.offsetTop - 100;
+        const bottom = top + el.offsetHeight;
+
+        if (scrollY >= top && scrollY < bottom) {
+          setActive(id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    /** Cleanup listener on unmount */
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  /**
+   * Handles navigation click
+   * -------------------------
+   * - Scrolls smoothly to selected section
+   * - Closes mobile menu (if open)
+   *
+   * @param {string} id - Section ID to scroll to
+   */
+  const handleNavClick = (id) => {
+    const el = document.getElementById(id);
+
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+
+    setOpen(false);
+  };
 
   return (
     <>
-      {/* 🔥 NAVBAR */}
-      <header className="fixed top-0 left-0 w-full z-50 dark:bg-white/70 dark:bg-black/70 backdrop-blur-md dark:text-black dark:text-white transition-colors duration-500">
+      {/* ================= HEADER (DESKTOP NAVBAR) ================= */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-md text-black">
+        <div className="flex justify-between items-center px-6 xl:px-20 py-4">
 
-        <div className="relative flex justify-between items-center px-6 xl:px-20 py-4">
-
-          {/* LOGO */}
+          {/* LOGO / BRAND NAME */}
           <p className="text-sm tracking-[0.2em]">
             KACPER SIWOŃ
           </p>
 
-          {/* DESKTOP */}
-          <div className="hidden md:flex gap-8 text-sm dark:text-black/60 dark:text-white/60">
-            <a href="#projects" className="dark:hover:text-black dark:hover:text-white transition">
-              {t.nav.projects}
-            </a>
-            <a href="#about" className="dark:hover:text-black dark:hover:text-white transition">
-              {t.nav.about}
-            </a>
-            <a href="#contact" className="hover:text-black dark:hover:text-white transition">
-              {t.nav.contact}
-            </a>
+          {/* DESKTOP NAVIGATION LINKS */}
+          <div className="hidden md:flex gap-8 text-sm">
+            {[
+              { id: "about", label: t.nav.about },
+              { id: "projects", label: t.nav.projects },
+              { id: "contact", label: t.nav.contact },
+            ].map((link) => (
+              <button
+                key={link.id}
+                onClick={() => handleNavClick(link.id)}
+                className={`
+                  relative transition
+                  ${active === link.id ? "text-black" : "text-black/50"}
+                `}
+              >
+                {link.label}
+
+                {/* ACTIVE LINK UNDERLINE */}
+                <span
+                  className={`
+                    absolute left-0 -bottom-1 h-px bg-black transition-all duration-300
+                    ${active === link.id ? "w-full" : "w-0"}
+                  `}
+                />
+              </button>
+            ))}
           </div>
 
-          {/* RIGHT */}
-          <div className="flex items-center relative right-12 gap-6">
+          {/* RIGHT SIDE CONTROLS (LANG + MOBILE MENU BUTTON) */}
+          <div className="flex items-center gap-6">
 
-            {/* LANG */}
+            {/* LANGUAGE SWITCH (DESKTOP) */}
             <div className="hidden md:flex text-sm gap-3">
-              <span
-                onClick={() => setLang("pl")}
-                className={`cursor-pointer ${
-                  lang === "pl"
-                    ? "dark:text-black dark:text-white"
-                    : "dark:text-black/40 dark:text-white/40"
-                }`}
-              >
+              <span onClick={() => setLang("pl")} className="cursor-pointer">
                 PL
               </span>
               <span>/</span>
-              <span
-                onClick={() => setLang("en")}
-                className={`cursor-pointer ${
-                  lang === "en"
-                    ? "dark:text-black dark:text-white"
-                    : "dark:text-black/40 dark:text-white/40"
-                }`}
-              >
+              <span onClick={() => setLang("en")} className="cursor-pointer">
                 EN
               </span>
             </div>
 
-            {/* HAMBURGER */}
-            <button
-              onClick={() => setOpen(true)}
-              className={`md:hidden transition duration-300 ${
-                open ? "opacity-0 scale-75" : "opacity-100 scale-100"
-              }`}
-            >
+            {/* MOBILE MENU OPEN BUTTON */}
+            <button onClick={() => setOpen(true)} className="md:hidden">
               <Menu size={24} />
             </button>
-
           </div>
-            <ThemePullSwitch />
+
         </div>
       </header>
 
-      {/* 🔥 OVERLAY */}
+      {/* ================= MOBILE MENU OVERLAY ================= */}
       <div
-        className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center transition-all duration-500 ${
+        className={`fixed inset-0 z-9999 flex flex-col items-center justify-center transition-all duration-500 ${
           open
-            ? "opacity-100 backdrop-blur-xl dark:bg-white/90 dark:bg-black/90 dark:text-black dark:text-white pointer-events-auto"
+            ? "opacity-100 backdrop-blur-xl bg-white/90"
             : "opacity-0 pointer-events-none"
         }`}
       >
 
-        {/* CLOSE */}
+        {/* CLOSE BUTTON */}
         <button
           onClick={() => setOpen(false)}
-          className="absolute top-6 left-6 text-sm dark:text-black/60 dark:text-white/60 hover:dark:text-black hover:dark:text-white transition"
+          className="absolute top-6 right-6"
         >
           <X size={28} />
         </button>
 
-        {/* LINKS */}
+        {/* MOBILE NAVIGATION LINKS */}
         <div className="flex flex-col gap-10 text-[26px] tracking-[0.2em] text-center">
-
-          {[t.nav.projects, t.nav.about, t.nav.contact].map((item, i) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={() => setOpen(false)}
-              className={`transition-all duration-700 ${
-                open
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
+          {[
+            { id: "about", label: t.nav.about },
+            { id: "projects", label: t.nav.projects },
+            { id: "contact", label: t.nav.contact },
+          ].map((link, i) => (
+            <button
+              key={link.id}
+              onClick={() => handleNavClick(link.id)}
+              className={`
+                relative transition-all duration-500
+                ${active === link.id ? "text-black" : "text-black/50"}
+              `}
               style={{ transitionDelay: `${i * 120 + 150}ms` }}
             >
-              {item}
-            </a>
-          ))}
+              {link.label}
 
+              {/* ACTIVE LINK INDICATOR (CENTERED UNDERLINE) */}
+              <span
+                className={`
+                  absolute left-1/2 -bottom-2 h-px bg-black transition-all duration-300
+                  ${active === link.id ? "w-10 -translate-x-1/2" : "w-0"}
+                `}
+              />
+            </button>
+          ))}
         </div>
 
-        {/* LANG MOBILE */}
+        {/* LANGUAGE SWITCH (MOBILE) */}
         <div className="absolute bottom-10 flex gap-4 text-sm">
-          <span
-            onClick={() => setLang("pl")}
-            className={`cursor-pointer ${
-              lang === "pl"
-                ? "dark:text-black dark:text-white"
-                : "dark:text-black/40 dark:text-white/40"
-            }`}
-          >
+          <span onClick={() => setLang("pl")} className="cursor-pointer">
             PL
           </span>
           <span>/</span>
-          <span
-            onClick={() => setLang("en")}
-            className={`cursor-pointer ${
-              lang === "en"
-                ? "dark:text-black dark:text-white"
-                : "dark:text-black/40 dark:text-white/40"
-            }`}
-          >
+          <span onClick={() => setLang("en")} className="cursor-pointer">
             EN
           </span>
         </div>
-    <ThemePullSwitch />
+
       </div>
     </>
   );
