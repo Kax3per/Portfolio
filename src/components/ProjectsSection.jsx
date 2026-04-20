@@ -146,7 +146,7 @@ export default function ProjectsSection() {
           </div>
 
           {/* ================= IMAGE STACK ================= */}
-          <div className="relative h-[400px] xl:h-[500px] flex items-center justify-center">
+          <div className="relative h-100 xl:h-125 flex items-center justify-center">
 
             {images.map((img, i) => {
               const isActive = index === i;
@@ -163,7 +163,7 @@ export default function ProjectsSection() {
             })}
 
             {/* BACKGROUND GLOW */}
-            <div className="absolute w-[500px] h-[500px] bg-black/5 blur-3xl rounded-full" />
+            <div className="absolute w-125 h-125 bg-black/5 blur-3xl rounded-full" />
           </div>
         </div>
 
@@ -179,7 +179,7 @@ export default function ProjectsSection() {
             /* DESKTOP */
             xl:top-1/2 xl:right-6
             xl:left-auto
-            xl:-translate-x-0 xl:-translate-y-1/2
+            xl:translate-x-0 xl:-translate-y-1/2
             xl:flex-col
           "
         >

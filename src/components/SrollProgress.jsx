@@ -61,7 +61,7 @@ export default function ScrollProgress() {
 
   return (
     /* ================= PROGRESS CONTAINER ================= */
-    <div className="fixed top-0 left-0 w-full h-[3px] z-[9999]">
+    <div className="fixed top-0 left-0 w-full h-0.75 z-9999">
 
       {/* ================= PROGRESS BAR ================= */}
       <div
